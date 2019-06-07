@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Teste1</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="titlesTabs">
+        <item>IDENTIFICAÇÃO DO DESASTRE</item>
+        <item>DANOS HUMANOS</item>
+        <item>DANOS MATERIAIS</item>
+        <item>DANOS AMBIENTAIS</item>
+        <item>DANOS ECONÔMICOS</item>
+        <item>IAH FORNECIDOS</item>
+
+
+    </string-array>
+
+    <string-array name="CODEREC">
+        <item>SECRETÁRIO DE ESTADO - JOÃO BATISTA CORDEIRO</item>
+
+
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <!--<string name="hello_blank_fragment">Hello blank fragment</string>-->
+
+
+</resources>
