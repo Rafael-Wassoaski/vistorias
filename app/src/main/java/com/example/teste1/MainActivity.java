@@ -7,10 +7,13 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,10 +44,29 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        final FloatingActionButton fab = findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                pagerAdapter pager = (pagerAdapter) viewPager.getAdapter();
+                danosAmbientais danos = (danosAmbientais)pager.getItem(3);
+
+
+
+danos.validate();
+
+//               if(danos.validate()){
+//
+//
+//
+//                }else{
+//
+//                    Toast toast = Toast.makeText(fab.getContext(), "Não passou", Toast.LENGTH_LONG);
+//                    toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 0);
+//                    toast.show();
+//                }
 
             }
         });

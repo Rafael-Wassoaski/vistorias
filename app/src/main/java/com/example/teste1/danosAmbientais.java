@@ -3,11 +3,13 @@ package com.example.teste1;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -31,9 +33,12 @@ public class danosAmbientais extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        desalojadosQuant = (EditText) getView().findViewById(R.id.desabrigadosQuant);
-        desabrigadosQuant = (EditText) getView().findViewById(R.id.desabrigadosQuant);
-        contamincaoAr = (EditText) getView().findViewById(R.id.contamincaoAr);
+
+        View view = inflater.inflate(R.layout.fragment_danos_ambientais, container, false);
+        desalojadosQuant = (EditText) view.findViewById(R.id.desabrigadosQuant);
+        desabrigadosQuant = (EditText) view.findViewById(R.id.desabrigadosQuant);
+        contamincaoAr = (EditText) view.findViewById(R.id.contamincaoAr);
+
 
 
         return inflater.inflate(R.layout.fragment_danos_ambientais, container, false);
@@ -42,7 +47,10 @@ public class danosAmbientais extends Fragment {
 
     public boolean validate(){
 
-        if(desalojadosQuant)
+
+        Toast toast = Toast.makeText(, "Passou", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 0);
+                    toast.show();
 
 
         return true;
