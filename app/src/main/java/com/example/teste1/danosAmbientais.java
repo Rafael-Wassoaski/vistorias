@@ -1,12 +1,14 @@
 package com.example.teste1;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,9 +20,10 @@ import android.widget.Toast;
 public class danosAmbientais extends Fragment {
 
 
-    EditText desalojadosQuant;
-    EditText desabrigadosQuant;
-    EditText contamincaoAr;
+    CheckBox contamincaoAgua;
+    CheckBox contamincaoSolo;
+    CheckBox contamincaoAr;
+    EditText AguaQuant;
 
 
 
@@ -35,9 +38,11 @@ public class danosAmbientais extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_danos_ambientais, container, false);
-        desalojadosQuant = (EditText) view.findViewById(R.id.desabrigadosQuant);
-        desabrigadosQuant = (EditText) view.findViewById(R.id.desabrigadosQuant);
-        contamincaoAr = (EditText) view.findViewById(R.id.contamincaoAr);
+        contamincaoAgua = (CheckBox) view.findViewById(R.id.contaminacaoAgua);
+        contamincaoSolo = (CheckBox) view.findViewById(R.id.ContaminacaoSolo);
+        contamincaoAr = (CheckBox) view.findViewById(R.id.contaminacaoAr);
+        AguaQuant = (EditText)view.findViewById(R.id.AguaQuantidade);
+
 
 
 
@@ -45,15 +50,18 @@ public class danosAmbientais extends Fragment {
     }
 
 
-    public boolean validate(){
+
+    public String getDados(){
+
+        String dados = "{";
+
+        dados += "Agua: "+contamincaoAgua.isChecked()+",";
+        dados += "Solo: "+contamincaoSolo.isChecked()+",";
+        dados += "Ar: "+contamincaoAr.isChecked()+"}";
+
+        return dados;
 
 
-        Toast toast = Toast.makeText(, "Passou", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 0);
-                    toast.show();
-
-
-        return true;
     }
 
 }

@@ -4,12 +4,19 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
+import android.util.SparseArray;
+import android.view.ViewGroup;
 
-public class pagerAdapter extends FragmentPagerAdapter {
+public class pagerAdapterRafael extends FragmentPagerAdapter {
 
     private String[] mTabTiles;
 
-    public pagerAdapter(FragmentManager fm, String[]mTabTiles) {
+    private SparseArray<Fragment> fragmentos = new SparseArray<>();
+
+
+
+    public pagerAdapterRafael(FragmentManager fm, String[]mTabTiles) {
         super(fm);
         this.mTabTiles = mTabTiles;
     }
@@ -50,5 +57,21 @@ public class pagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         return this.mTabTiles[position];
+    }
+
+    @Override
+    public Object instantiateItem(ViewGroup container, int position) {
+        Fragment fragment = (Fragment) super.instantiateItem(container, position);
+        fragmentos.put(position, fragment);
+        return fragment;
+    }
+
+
+
+
+
+
+    public Fragment getRegisteredFragment(int position) {
+        return fragmentos.get(position);
     }
 }
