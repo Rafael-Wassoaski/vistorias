@@ -8,7 +8,7 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
-public class pagerAdapterRafael extends FragmentPagerAdapter {
+public class pagerAdapter extends FragmentPagerAdapter {
 
     private String[] mTabTiles;
 
@@ -16,7 +16,7 @@ public class pagerAdapterRafael extends FragmentPagerAdapter {
 
 
 
-    public pagerAdapterRafael(FragmentManager fm, String[]mTabTiles) {
+    public pagerAdapter(FragmentManager fm, String[]mTabTiles) {
         super(fm);
         this.mTabTiles = mTabTiles;
     }
