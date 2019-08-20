@@ -90,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/desaparecidosQuant"
         android:layout_width="105dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -102,7 +102,7 @@
         app:layout_constraintTop_toBottomOf="@+id/desabrigadosQuant" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/feridosQuant"
         android:layout_width="105dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -111,10 +111,10 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/desaparecidosQuant" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/enfermosQuant"
         android:layout_width="105dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -123,10 +123,10 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/feridosQuant" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/observacoes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -139,7 +139,7 @@
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/enfermosQuant" />
 
     <TextView
         android:id="@+id/textView11"
