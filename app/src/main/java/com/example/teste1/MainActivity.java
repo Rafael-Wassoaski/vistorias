@@ -50,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            danosAmbientais ambiente = (danosAmbientais) pager.getRegisteredFragment(3);
+            //danosAmbientais ambiente = (danosAmbientais) pager.getRegisteredFragment(3);
+                danosHumanos humanos = (danosHumanos) pager.getRegisteredFragment(1);
 
-
-Log.d("OPa", ambiente.getDados());
+Log.d("OPa", humanos.getDados());
 
 
 

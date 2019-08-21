@@ -21,6 +21,7 @@
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:ems="10"
+        android:visibility="invisible"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -34,6 +35,7 @@
             android:layout_marginEnd="25dp"
             android:layout_marginRight="25dp"
             android:ems="10"
+            android:visibility="invisible"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/desalojadosQuant" />
@@ -46,6 +48,7 @@
             android:layout_marginEnd="25dp"
             android:layout_marginRight="25dp"
             android:ems="10"
+            android:visibility="invisible"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/desabrigadosQuant" />
@@ -58,6 +61,7 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:ems="10"
+            android:visibility="invisible"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/desaparecidosQuant" />
@@ -70,6 +74,7 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:ems="10"
+            android:visibility="invisible"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/feridosQuant" />
@@ -82,6 +87,7 @@
             android:layout_marginEnd="25dp"
             android:layout_marginRight="25dp"
             android:ems="10"
+            android:visibility="invisible"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enfermosQuant" />
@@ -94,6 +100,7 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:ems="10"
+            android:visibility="invisible"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mortosQuant" />
@@ -106,6 +113,7 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:ems="10"
+            android:visibility="invisible"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/isoladosQuant" />
@@ -118,6 +126,7 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:ems="10"
+            android:visibility="invisible"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/atingidosQuant" />

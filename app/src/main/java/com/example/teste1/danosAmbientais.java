@@ -22,7 +22,7 @@ import android.widget.Toast;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class danosAmbientais extends Fragment {
+public class danosAmbientais extends Fragment implements DadosInterface{
    private CheckBox contamincaoAgua;
    private  CheckBox contamincaoSolo;
    private  CheckBox contamincaoAr;
@@ -51,9 +51,7 @@ public class danosAmbientais extends Fragment {
         ArQuant = (EditText)view.findViewById(R.id.quantidadeAr);
         SoloQuant = (EditText)view.findViewById(R.id.quantidadeSolo);
 
-        AguaQuant.setVisibility(View.INVISIBLE);
-        SoloQuant.setVisibility(View.INVISIBLE);
-        ArQuant.setVisibility(View.INVISIBLE);
+
 
         contamincaoAr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -102,17 +100,8 @@ public class danosAmbientais extends Fragment {
     }
 
 
+
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
-
-
-
-    }
-
-
     public Boolean verficaDados(){
 
         if(contamincaoSolo.isChecked()){
@@ -148,7 +137,7 @@ public class danosAmbientais extends Fragment {
     }
 
 
-
+    @Override
     public String getDados(){
 
 
@@ -159,9 +148,17 @@ public class danosAmbientais extends Fragment {
 
 
 
-            dados += "Agua: " + contamincaoAgua.isChecked() + ",";
-            dados += "Solo: " + contamincaoSolo.isChecked() + ",";
-            dados += "Ar: " + contamincaoAr.isChecked();
+
+            if(contamincaoAgua.isChecked())
+            dados += "Agua: " + AguaQuant.getText().toString() + ",";
+
+
+            if(contamincaoSolo.isChecked())
+            dados += "Solo: " + SoloQuant.getText().toString() + ",";
+
+
+            if(contamincaoAr.isChecked())
+            dados += "Ar" + ArQuant.getText().toString() + ",";
 
 
         }
