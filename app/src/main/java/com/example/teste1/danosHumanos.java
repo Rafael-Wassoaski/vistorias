@@ -1,12 +1,7 @@
 package com.example.teste1;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +9,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -78,6 +72,15 @@ public class danosHumanos extends Fragment implements DadosInterface{
         lista.put(isolados, isoladosQuant);
         lista.put(atingidos, atingidosQuant);
         lista.put(afetados, afetadosQuant);
+
+        for(Map.Entry<CheckBox, EditText> entrada : lista.entrySet()){
+
+            CheckBox checkBox = entrada.getKey();
+            final EditText editText = entrada.getValue();
+
+           editText.setVisibility(View.INVISIBLE);
+        }
+
 
         for(Map.Entry<CheckBox, EditText> entrada : lista.entrySet()){
 

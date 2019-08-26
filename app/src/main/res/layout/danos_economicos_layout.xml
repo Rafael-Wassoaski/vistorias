@@ -32,7 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Desalojados" />
 
     <EditText
-        android:id="@+id/desalojadosQuant"
+        android:id="@+id/atingidosQuant"
         android:layout_width="105dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -45,7 +45,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/desabrigadosQuant"
+        android:id="@+id/atingidosQuant"
         android:layout_width="105dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -99,7 +99,7 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desabrigadosQuant" />
+        app:layout_constraintTop_toBottomOf="@+id/atingidosQuant" />
 
     <EditText
         android:id="@+id/feridosQuant"
