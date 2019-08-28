@@ -3,6 +3,7 @@ package com.example.teste1;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,10 +12,17 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private ArrayList<DadosInterface> fragmentos = new ArrayList<DadosInterface>();
+    private String dado;
+    private SocketTask st;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,21 +50,50 @@ public class MainActivity extends AppCompatActivity {
 
         final FloatingActionButton fab = findViewById(R.id.fab);
 
+
+
+
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                dado = "{";
+
+                    ocorrenciaCadastro ocorrencia = (ocorrenciaCadastro)pager.getRegisteredFragment(0);
+                    danosHumanos humanos = (danosHumanos)pager.getRegisteredFragment(1);
+                    danosMateriais materiais = (danosMateriais)pager.getRegisteredFragment(2);
+                    danosAmbientais ambientais = (danosAmbientais)pager.getRegisteredFragment(3);
+                    danosEconomicos economicos = (danosEconomicos)pager.getRegisteredFragment(4);
+                    iahframento iah = (iahframento)pager.getRegisteredFragment(5);
+//
+try {
+    dado+=ocorrencia.getDados() + "\n";
+    dado+=humanos.getDados()+ "\n";
+    dado+=ambientais.getDados()+ "\n";
+    dado += economicos.getDados()+ "\n";
+    dado+=iah.getDados()+ "\n";
+    dado+=materiais.getDados()+ "\n";
+}catch (Exception e){
+    Log.d("Exep", e.getLocalizedMessage() + " " + e.getMessage());
+}
+
+
+dado+="}";
+Log.d("JSON", dado);
 
 
 
 
-            //danosAmbientais ambiente = (danosAmbientais) pager.getRegisteredFragment(3);
-                // danosHumanos humanos = (danosHumanos) pager.getRegisteredFragment(1);
-                danosMateriais materiais = (danosMateriais) pager.getRegisteredFragment(2);
+st = new SocketTask("192.168.1.70", 23456, 5000) {
+    @Override
+    protected void onProgressUpdate(String... values) {
+        super.onProgressUpdate(values);
+    }
+};
 
 
-Log.d("opa", materiais.getDados());
-
+st.execute(dado);
 
 
 

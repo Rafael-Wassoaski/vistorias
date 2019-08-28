@@ -141,7 +141,7 @@ public class danosAmbientais extends Fragment implements DadosInterface{
     public String getDados(){
 
 
-        String dados = "{";
+        String dados = "ambiente{";
 
         if(verficaDados()) {
 
@@ -150,15 +150,15 @@ public class danosAmbientais extends Fragment implements DadosInterface{
 
 
             if(contamincaoAgua.isChecked())
-            dados += "Agua: " + AguaQuant.getText().toString() + ",";
+            dados += "Agua: " + AguaQuant.getText().toString() + ", ";
 
 
             if(contamincaoSolo.isChecked())
-            dados += "Solo: " + SoloQuant.getText().toString() + ",";
+            dados += "Solo: " + SoloQuant.getText().toString() + ", ";
 
 
             if(contamincaoAr.isChecked())
-            dados += "Ar" + ArQuant.getText().toString() + ",";
+            dados += "Ar" + ArQuant.getText().toString() + ", ";
 
 
         }

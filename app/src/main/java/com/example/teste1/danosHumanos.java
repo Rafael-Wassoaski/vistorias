@@ -113,7 +113,7 @@ public class danosHumanos extends Fragment implements DadosInterface{
 
 
 
-        String dados = "{";
+        String dados = "humanos{";
 
         for(Map.Entry<CheckBox, EditText> entrada : lista.entrySet()){
 
@@ -122,7 +122,7 @@ public class danosHumanos extends Fragment implements DadosInterface{
 
             if(checkBox.isChecked()){
 
-               dados += checkBox.getText().toString() + ": "+ editText.getText().toString() + ",";
+               dados += checkBox.getText().toString() + ": "+ editText.getText().toString() + ", ";
             }
         }
 

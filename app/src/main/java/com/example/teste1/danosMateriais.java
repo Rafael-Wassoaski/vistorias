@@ -71,7 +71,7 @@ public class danosMateriais extends Fragment implements DadosInterface{
 
     @Override
     public String getDados() {
-        String dados = "{";
+        String dados = "materiais{";
 
         for(Map.Entry<CheckBox, EditText> entrada : materiais.entrySet()){
 
@@ -80,7 +80,7 @@ public class danosMateriais extends Fragment implements DadosInterface{
 
             if(checkBox.isChecked()){
 
-                dados += checkBox.getText().toString() + ": "+ editText.getText().toString() + ",";
+                dados += checkBox.getText().toString() + ": "+ editText.getText().toString() + ", ";
             }
         }
 

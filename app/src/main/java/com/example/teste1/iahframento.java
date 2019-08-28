@@ -82,7 +82,7 @@ public class iahframento extends Fragment implements DadosInterface{
 
 
 
-        String dados = "{";
+        String dados = "iah{";
 
         for(Map.Entry<CheckBox, EditText> entrada : iah.entrySet()){
 
@@ -91,7 +91,7 @@ public class iahframento extends Fragment implements DadosInterface{
 
             if(checkBox.isChecked()){
 
-                dados += checkBox.getText().toString() + ": "+ editText.getText().toString() + ",";
+                dados += checkBox.getText().toString() + ": "+ editText.getText().toString() + ", ";
             }
         }
 
