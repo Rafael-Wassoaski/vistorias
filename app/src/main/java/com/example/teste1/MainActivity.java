@@ -1,5 +1,7 @@
 package com.example.teste1;
 
+import android.content.Context;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -82,7 +84,9 @@ try {
 dado+="}";
 Log.d("JSON", dado);
 
-
+LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+//Log.d("local",)
 
 
 st = new SocketTask("192.168.1.70", 23456, 5000) {
