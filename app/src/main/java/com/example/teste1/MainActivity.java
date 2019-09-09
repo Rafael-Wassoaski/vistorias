@@ -1,6 +1,7 @@
 package com.example.teste1;
 
 import android.content.Context;
+import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +15,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
+
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<DadosInterface> fragmentos = new ArrayList<DadosInterface>();
     private String dado;
     private SocketTask st;
+    private FusedLocationProviderClient fusedLocationClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("CADASTRO DE VISTORIA");
-
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
 
         tabLayout = (TabLayout)findViewById(R.id.tabLayout);
@@ -82,11 +88,21 @@ try {
 
 
 dado+="}";
-Log.d("JSON", dado);
 
-LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-//Log.d("local",)
+try {
+    fusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
+        @Override
+        public void onSuccess(Location location) {
+            if(location!=null){
+                Log.d("Local", location.toString());
+            }
+        }
+    });
+}catch (Exception e ){
+    e.printStackTrace();
+}
+
+
 
 
 st = new SocketTask("192.168.1.70", 23456, 5000) {
