@@ -33,6 +33,7 @@ private  ArrayAdapter<CharSequence> municipiosArray;
     private Spinner coderecSpinnder;
     private ArrayAdapter<CharSequence> coderecArray;
     private EditText cobrad;
+    private EditText endereco;
     private EditText descricao;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,6 +50,7 @@ private  ArrayAdapter<CharSequence> municipiosArray;
         municipiosArray = ArrayAdapter.createFromResource(getContext(), R.array.municipioCadastrados, android.R.layout.simple_spinner_item);
         municipiosArray.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         municipioSpinner.setAdapter(municipiosArray);
+        endereco = (EditText)view.findViewById(R.id.endereco);
 
         coderecSpinnder = (Spinner)view.findViewById((R.id.COREDEC));
         coderecArray = ArrayAdapter.createFromResource(getContext(), R.array.CODEREC, android.R.layout.simple_spinner_item);
@@ -77,6 +79,7 @@ private  ArrayAdapter<CharSequence> municipiosArray;
         dados+= "cobrad:" + cobrad.getText().toString() + ", ";
         dados+= "hora:" + hora.getText().toString() + ", ";
         dados+= "data:" + data.getText().toString() + ", ";
+        dados+= "endereco:" + endereco.getText().toString()+", ";
         dados+= "descricao:" + descricao.getText().toString();
 
         dados += "}";
@@ -96,6 +99,11 @@ private  ArrayAdapter<CharSequence> municipiosArray;
 
         if(cobrad.getText().toString().isEmpty() ){
             cobrad.requestFocus();
+            return false;
+        }
+
+        if(endereco.getText().toString().isEmpty()){
+            endereco.requestFocus();
             return false;
         }
 
