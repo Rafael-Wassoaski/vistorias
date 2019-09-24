@@ -9,6 +9,9 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -70,8 +73,9 @@ public class danosMateriais extends Fragment implements DadosInterface{
 
 
     @Override
-    public String getDados() {
-        String dados = "materiais{";
+    public void getDados(JSONObject json) throws JSONException {
+
+
 
         for(Map.Entry<CheckBox, EditText> entrada : materiais.entrySet()){
 
@@ -79,16 +83,15 @@ public class danosMateriais extends Fragment implements DadosInterface{
             final EditText editText = entrada.getValue();
 
             if(checkBox.isChecked()){
+                json.put(checkBox.getText().toString(), editText.getText());
 
-                dados += checkBox.getText().toString() + ": "+ editText.getText().toString() + ", ";
+            }else{
+                json.put(checkBox.getText().toString(), 0);
             }
         }
 
 
 
-        dados += "}";
-
-        return dados;
     }
 
     @Override

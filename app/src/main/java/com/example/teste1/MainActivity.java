@@ -23,6 +23,8 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+import org.json.JSONObject;
+
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -59,13 +61,13 @@ public class MainActivity extends AppCompatActivity {
         final FloatingActionButton fab = findViewById(R.id.fab);
 
 
-
+        final JSONObject jsonEnviar =  new JSONObject();;
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("Local3", localizador.getLocation());
-                dado = "{";
+
 
                 ocorrenciaCadastro ocorrencia = (ocorrenciaCadastro) pager.getRegisteredFragment(0);
                 danosHumanos humanos = (danosHumanos) pager.getRegisteredFragment(1);
@@ -75,24 +77,25 @@ public class MainActivity extends AppCompatActivity {
                 iahframento iah = (iahframento) pager.getRegisteredFragment(5);
 //
                 try {
-                    dado += ocorrencia.getDados() + "\n";
-                    dado += humanos.getDados() + "\n";
-                    dado += ambientais.getDados() + "\n";
-                    dado += economicos.getDados() + "\n";
-                    dado += iah.getDados() + "\n";
-                    dado += materiais.getDados() + "\n";
+                    ocorrencia.getDados(jsonEnviar);
+                    humanos.getDados(jsonEnviar);
+                    materiais.getDados(jsonEnviar);
+                    ambientais.getDados(jsonEnviar);
+                    economicos.getDados(jsonEnviar);
+                    iah.getDados(jsonEnviar);
+
                 } catch (Exception e) {
                     Log.d("Exep", e.getLocalizedMessage() + " " + e.getMessage());
                 }
 
 
-                dado += "}";
+           Log.d("Json", jsonEnviar.toString());
 
 
 
 //envio daqui
 
-//st = new SocketTask("192.168.1.70", 23456, 5000) {
+//st = new SocketTask("192.168.1.55", 6666, 5000) {
 //    @Override
 //    protected void onProgressUpdate(String... values) {
 //        super.onProgressUpdate(values);

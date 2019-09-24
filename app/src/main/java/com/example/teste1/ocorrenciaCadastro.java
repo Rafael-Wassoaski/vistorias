@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -71,21 +74,24 @@ private  ArrayAdapter<CharSequence> municipiosArray;
     }
 
     @Override
-    public String getDados() {
+    public void getDados(JSONObject json) throws JSONException {
 
         String dados = "ocorrencia{";
-        dados+= "municipio: " + municipioSpinner.getSelectedItem().toString() + ", ";
-        dados+= "coderec:" + coderecSpinnder.getSelectedItem().toString() + ", ";
-        dados+= "cobrad:" + cobrad.getText().toString() + ", ";
-        dados+= "hora:" + hora.getText().toString() + ", ";
-        dados+= "data:" + data.getText().toString() + ", ";
-        dados+= "endereco:" + endereco.getText().toString()+", ";
-        dados+= "descricao:" + descricao.getText().toString();
 
-        dados += "}";
+        json.put("municipip", municipioSpinner.getSelectedItem().toString());
+        json.put("coderec", coderecSpinnder.getSelectedItem().toString());
+        json.put("cobrad", cobrad.getText().toString());
+        json.put("hora", hora.getText().toString());
+        json.put("data", data.getText().toString());
+        json.put("endereco", endereco.getText().toString());
+        json.put("descricao", descricao.getText().toString());
 
 
-        return dados;
+
+
+
+
+
     }
 
     @Override

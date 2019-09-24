@@ -18,6 +18,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -101,6 +106,8 @@ public class danosAmbientais extends Fragment implements DadosInterface{
 
 
 
+
+
     @Override
     public Boolean verficaDados(){
 
@@ -138,10 +145,12 @@ public class danosAmbientais extends Fragment implements DadosInterface{
 
 
     @Override
-    public String getDados(){
+    public void getDados(JSONObject json) throws JSONException {
 
 
-        String dados = "ambiente{";
+
+
+
 
         if(verficaDados()) {
 
@@ -149,22 +158,39 @@ public class danosAmbientais extends Fragment implements DadosInterface{
 
 
 
-            if(contamincaoAgua.isChecked())
-            dados += "Agua: " + AguaQuant.getText().toString() + ", ";
+            if(contamincaoAgua.isChecked()) {
+                json.put("contaminacao_agua", AguaQuant.getText());
+            }else{
+                json.put("contaminacao_agua", 0);
+            }
 
 
-            if(contamincaoSolo.isChecked())
-            dados += "Solo: " + SoloQuant.getText().toString() + ", ";
 
 
-            if(contamincaoAr.isChecked())
-            dados += "Ar" + ArQuant.getText().toString() + ", ";
+            if(contamincaoSolo.isChecked()) {
 
+                json.put("contaminacao_solo", SoloQuant.getText());
+            }else{
+                json.put("contaminacao_solo", 0);
+            }
+
+
+
+
+
+            if(contamincaoAr.isChecked()) {
+
+                json.put("contaminacao_ar", ArQuant.getText());
+            }else{
+                json.put("contaminacao_ar", 0);
+
+            }
 
         }
 
-        dados+="}";
-        return dados;
+
     }
 
 }
+
+
