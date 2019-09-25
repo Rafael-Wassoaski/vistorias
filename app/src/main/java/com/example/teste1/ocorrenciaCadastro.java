@@ -78,7 +78,7 @@ private  ArrayAdapter<CharSequence> municipiosArray;
 
         String dados = "ocorrencia{";
 
-        json.put("municipip", municipioSpinner.getSelectedItem().toString());
+        json.put("municipio", municipioSpinner.getSelectedItem().toString());
         json.put("coderec", coderecSpinnder.getSelectedItem().toString());
         json.put("cobrad", cobrad.getText().toString());
         json.put("hora", hora.getText().toString());

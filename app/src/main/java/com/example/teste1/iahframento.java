@@ -45,8 +45,8 @@ public class iahframento extends Fragment implements DadosInterface{
         iah.put((CheckBox)view.findViewById(R.id.higiene), (EditText)view.findViewById(R.id.higieneQuant));
         iah.put((CheckBox)view.findViewById(R.id.limpeza), (EditText)view.findViewById(R.id.limpezaQuant));
         iah.put((CheckBox)view.findViewById(R.id.telhas), (EditText)view.findViewById(R.id.telhasQuant));
-        iah.put((CheckBox)view.findViewById(R.id.lona), (EditText)view.findViewById(R.id.lonaQuant2));
-        iah.put((CheckBox)view.findViewById(R.id.outros), (EditText)view.findViewById(R.id.lonaQuant2));
+        iah.put((CheckBox)view.findViewById(R.id.lona), (EditText)view.findViewById(R.id.lonaQuant));
+        iah.put((CheckBox)view.findViewById(R.id.outros), (EditText)view.findViewById(R.id.outrosQuant));
 
 
         for(Map.Entry<CheckBox, EditText> entrada : iah.entrySet()){
@@ -94,10 +94,10 @@ public class iahframento extends Fragment implements DadosInterface{
             final EditText editText = entrada.getValue();
 
             if(checkBox.isChecked()){
-                json.put(checkBox.getText().toString(), editText.getText());
+                json.put(checkBox.getTag().toString(), editText.getText());
 
             }else{
-                json.put(checkBox.getText().toString(), 0);
+                json.put(checkBox.getTag().toString(), 0);
             }
         }
 

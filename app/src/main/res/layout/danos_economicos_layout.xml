@@ -39,6 +39,7 @@
 
     <CheckBox
         android:id="@+id/danosAgricultura"
+        android:tag="danos_agricultura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -50,6 +51,7 @@
 
     <CheckBox
         android:id="@+id/danosPecuária"
+        android:tag="danos_pecuaria"
         android:layout_width="239dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -61,6 +63,7 @@
 
     <CheckBox
         android:id="@+id/danosIndustria"
+        android:tag="danos_industria"
         android:layout_width="238dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -72,6 +75,7 @@
 
     <CheckBox
         android:id="@+id/danosComercio"
+        android:tag="danos_comercio"
         android:layout_width="238dp"
         android:layout_height="34dp"
         android:layout_marginStart="8dp"
@@ -83,6 +87,7 @@
 
     <CheckBox
         android:id="@+id/danosServicos"
+        android:tag="danos_servicos"
         android:layout_width="245dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"

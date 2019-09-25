@@ -103,6 +103,7 @@
 
     <CheckBox
         android:id="@+id/desalojados"
+        android:tag="danos_humanos_desalojados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -114,6 +115,7 @@
 
     <CheckBox
         android:id="@+id/desabrigados"
+        android:tag="danos_humanos_desabrigados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -125,6 +127,7 @@
 
     <CheckBox
         android:id="@+id/desaparecidos"
+        android:tag="danos_humanos_desaparecidos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -136,6 +139,7 @@
 
     <CheckBox
         android:id="@+id/feridos"
+        android:tag="danos_humanos_feridos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -147,6 +151,7 @@
 
     <CheckBox
         android:id="@+id/enfermos"
+        android:tag="danos_humanos_enfermos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -158,6 +163,7 @@
 
     <CheckBox
         android:id="@+id/mortos"
+        android:tag="danos_humanos_mortos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -169,6 +175,7 @@
 
     <CheckBox
         android:id="@+id/isolados"
+        android:tag="danos_humanos_isolados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -180,6 +187,7 @@
 
     <CheckBox
         android:id="@+id/atingidos"
+        android:tag="danos_humanos_atingidos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -191,6 +199,7 @@
 
     <CheckBox
         android:id="@+id/afetados"
+        android:tag="danos_humanos_afetados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

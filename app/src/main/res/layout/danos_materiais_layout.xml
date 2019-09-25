@@ -45,6 +45,7 @@
 
     <CheckBox
         android:id="@+id/atingidos"
+        android:tag="unidades_habitacionais_atingidas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -56,6 +57,7 @@
 
     <CheckBox
         android:id="@+id/danificadas"
+        android:tag="unidades_habitacionais_danificadas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -67,6 +69,7 @@
 
     <CheckBox
         android:id="@+id/interditadas"
+        android:tag="unidades_habitacionais_interditadas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -78,6 +81,7 @@
 
     <CheckBox
         android:id="@+id/destruidas"
+        android:tag="unidades_habitacionais_destruidas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -89,6 +93,7 @@
 
     <CheckBox
         android:id="@+id/instalacaoSaude"
+        android:tag="instalacoes_saude"
         android:layout_width="230dp"
         android:layout_height="62dp"
         android:layout_marginStart="8dp"
@@ -100,6 +105,7 @@
 
     <CheckBox
         android:id="@+id/instalacoesEnsino"
+        android:tag="instalacoes_ensino"
         android:layout_width="229dp"
         android:layout_height="56dp"
         android:layout_marginStart="8dp"
@@ -111,6 +117,7 @@
 
     <CheckBox
         android:id="@+id/instalacoesComunitarias"
+        android:tag="instalacoes_comunitarias"
         android:layout_width="230dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -122,6 +129,7 @@
 
     <CheckBox
         android:id="@+id/obrasPublicas"
+        android:tag="obras_publicas"
         android:layout_width="234dp"
         android:layout_height="70dp"
         android:layout_marginStart="8dp"
@@ -133,6 +141,7 @@
 
     <CheckBox
         android:id="@+id/interrupcaoServicos"
+        android:tag="interrupcao_servicos"
         android:layout_width="162dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"

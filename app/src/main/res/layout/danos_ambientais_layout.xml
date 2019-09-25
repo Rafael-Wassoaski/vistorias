@@ -11,6 +11,7 @@
 
     <CheckBox
         android:id="@+id/contaminacaoAr"
+        android:tag="contaminacao_ar"
         android:layout_width="192dp"
         android:layout_height="34dp"
         android:layout_marginStart="8dp"
@@ -40,6 +41,7 @@
 
     <CheckBox
         android:id="@+id/ContaminacaoSolo"
+        android:tag="contaminacao_solo"
         android:layout_width="192dp"
         android:layout_height="32dp"
         android:layout_marginStart="8dp"
@@ -52,6 +54,7 @@
 
     <CheckBox
         android:id="@+id/contaminacaoAgua"
+        android:tag="contaminacao_agua"
         android:layout_width="192dp"
         android:layout_height="41dp"
         android:layout_marginStart="8dp"

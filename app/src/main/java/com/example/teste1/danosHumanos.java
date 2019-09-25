@@ -123,10 +123,10 @@ public class danosHumanos extends Fragment implements DadosInterface{
             final EditText editText = entrada.getValue();
 
             if(checkBox.isChecked()){
-                json.put(checkBox.getText().toString(), editText.getText());
+                json.put(checkBox.getTag().toString(), editText.getText());
 
             }else{
-                json.put(checkBox.getText().toString(), 0);
+                json.put(checkBox.getTag().toString(), 0);
             }
         }
 

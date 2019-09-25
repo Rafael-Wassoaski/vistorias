@@ -55,7 +55,12 @@ public class MainActivity extends AppCompatActivity {
         final pagerAdapter pager = new pagerAdapter(getSupportFragmentManager(), getResources().getStringArray(R.array.titlesTabs));
         viewPager.setAdapter(pager);
 
+
+
         tabLayout.setupWithViewPager(viewPager);
+
+        for(int count = 0; count < 6; count++)
+        pager.instantiateItem(viewPager, count);
 
 
         final FloatingActionButton fab = findViewById(R.id.fab);
